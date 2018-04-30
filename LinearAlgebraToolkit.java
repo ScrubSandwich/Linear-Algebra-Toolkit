@@ -11,6 +11,7 @@ public class LinearAlgebraToolkit {
     System.out.println("=====Linear Algebra Toolkit=====");
     System.out.println("1. Determinant of nxn matrix");
     System.out.println("2. Is nxn matrix symmetric");
+    System.out.println("3. Is nxn matrix diagonal");
     System.out.println("99. Exit");
   }
 
@@ -148,6 +149,14 @@ public class LinearAlgebraToolkit {
 
         if (isSymmetric(matrix)) { System.out.println("symmetric"); }
         else { System.out.println("not symmetric"); }
+
+      } else if (input == 3) {
+        System.out.println();
+        System.out.print("The " + matrix.length + "x" + matrix.length + " matrix is ");
+
+        if (isDiagonal(matrix)) { System.out.println("diagonal"); }
+        else { System.out.println("not diagonal"); }
+        
       }
     }    
   }
