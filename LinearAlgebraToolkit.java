@@ -10,6 +10,7 @@ public class LinearAlgebraToolkit {
     
     System.out.println("=====Linear Algebra Toolkit=====");
     System.out.println("1. Determinant of nxn matrix");
+    System.out.println("2. Is nxn matrix symmetric");
     System.out.println("99. Exit");
   }
 
@@ -41,7 +42,7 @@ public class LinearAlgebraToolkit {
     return m;
   }
 
-  public boolean isSquare(int[][] matrix) {
+  public static boolean isSquare(int[][] matrix) {
     for (int i = 0; i < matrix.length; i++) {
       for (int j = 0; j < matrix[i].length; j++) {
         if (matrix.length != matrix[i].length) { return false; }
@@ -51,7 +52,7 @@ public class LinearAlgebraToolkit {
     return true;
   }
 
-  public boolean isSymmetric(int[][] matrix){
+  public static boolean isSymmetric(int[][] matrix){
     if (!isSquare(matrix)) { return false; }
 
     for (int i = 0; i < matrix.length; i++) {
@@ -63,9 +64,9 @@ public class LinearAlgebraToolkit {
     return true;
   }
 
-  public boolean isDiagonal(int[][] matrix){
+  public static boolean isDiagonal(int[][] matrix){
     if (!isSquare(matrix)) { return false; }
-    
+
     for (int i = 0; i < matrix.length; i++){
       for (int j = 0; j < matrix[i].length; j++){
         if (i != j){
@@ -141,6 +142,12 @@ public class LinearAlgebraToolkit {
         System.out.println();
         System.out.println("Determinant of the " + matrix.length + "x" + matrix.length + " matrix:");
         System.out.println(determinant(matrix));
+      } else if (input == 2) {
+        System.out.println();
+        System.out.print("The " + matrix.length + "x" + matrix.length + " matrix is ");
+
+        if (isSymmetric(matrix)) { System.out.println("symmetric"); }
+        else { System.out.println("not symmetric"); }
       }
     }    
   }
