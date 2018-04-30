@@ -63,6 +63,20 @@ public class LinearAlgebraToolkit {
     return true;
   }
 
+  public boolean isDiagonal(int[][] matrix){
+    for (int i = 0; i < matrix.length; i++){
+      for (int j = 0; j < matrix[i].length; j++){
+        if (i != j){
+          if (matrix[i][j] != 0){
+            return false;
+          }
+        }
+      }
+    }
+
+    return true;
+  }
+
   public static int determinant(int[][] m) {
     int n = m.length;
 
