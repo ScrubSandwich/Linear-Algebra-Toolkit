@@ -41,6 +41,16 @@ public class LinearAlgebraToolkit {
     return m;
   }
 
+  public boolean isSquare(int[][] matrix) {
+    for (int i = 0; i < matrix.length; i++) {
+      for (int j = 0; j < matrix[i].length; j++) {
+        if (matrix.length != matrix[i].length) { return false; }
+      }
+    }
+
+    return true;
+  }
+
   public static int determinant(int[][] m) {
     int n = m.length;
 
